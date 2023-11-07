@@ -1,0 +1,152 @@
+2023-11-06 20:55:18.173 MST [13949] LOG:  starting PostgreSQL 16.0 on x86_64-apple-darwin13.4.0, compiled by clang version 15.0.7, 64-bit
+2023-11-06 20:55:18.176 MST [13949] LOG:  could not bind IPv6 address "::1": Address already in use
+2023-11-06 20:55:18.176 MST [13949] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2023-11-06 20:55:18.176 MST [13949] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2023-11-06 20:55:18.176 MST [13949] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2023-11-06 20:55:18.176 MST [13949] WARNING:  could not create listen socket for "localhost"
+2023-11-06 20:55:18.176 MST [13949] FATAL:  could not create any TCP/IP sockets
+2023-11-06 20:55:18.177 MST [13949] LOG:  database system is shut down
+2023-11-06 21:00:51.860 MST [12380] LOG:  background worker "logical replication launcher" (PID 12386) exited with exit code 1
+2023-11-06 21:01:15.043 MST [12380] LOG:  received smart shutdown request
+2023-11-06 21:01:15.048 MST [12380] LOG:  background worker "logical replication launcher" (PID 14845) exited with exit code 1
+2023-11-06 21:01:15.049 MST [12381] LOG:  shutting down
+2023-11-06 21:01:15.050 MST [12381] LOG:  checkpoint starting: shutdown immediate
+2023-11-06 21:01:15.059 MST [12381] LOG:  checkpoint complete: wrote 1 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.001 s, total=0.011 s; sync files=1, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/14A3060, redo lsn=0/14A3060
+2023-11-06 21:01:15.068 MST [12380] LOG:  database system is shut down
+2023-11-06 21:01:28.869 MST [14997] LOG:  starting PostgreSQL 16.0 on x86_64-apple-darwin13.4.0, compiled by clang version 15.0.7, 64-bit
+2023-11-06 21:01:28.874 MST [14997] LOG:  listening on IPv6 address "::1", port 5432
+2023-11-06 21:01:28.874 MST [14997] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2023-11-06 21:01:28.876 MST [14997] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2023-11-06 21:01:28.885 MST [15000] LOG:  database system was shut down at 2023-11-06 21:01:15 MST
+2023-11-06 21:01:28.885 MST [15000] LOG:  WAL file is from different database system: WAL file database system identifier is 7298563638489708053, pg_control database system identifier is 7298371422493661249
+2023-11-06 21:01:28.886 MST [15000] LOG:  invalid checkpoint record
+2023-11-06 21:01:28.886 MST [15000] PANIC:  could not locate a valid checkpoint record
+2023-11-06 21:01:28.994 MST [14997] LOG:  startup process (PID 15000) was terminated by signal 6: Abort trap: 6
+2023-11-06 21:01:28.994 MST [14997] LOG:  aborting startup due to startup process failure
+2023-11-06 21:01:28.995 MST [14997] LOG:  database system is shut down
+2023-11-06 21:02:23.433 MST [15171] LOG:  starting PostgreSQL 16.0 on x86_64-apple-darwin13.4.0, compiled by clang version 15.0.7, 64-bit
+2023-11-06 21:02:23.436 MST [15171] LOG:  listening on IPv6 address "::1", port 5432
+2023-11-06 21:02:23.436 MST [15171] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2023-11-06 21:02:23.438 MST [15171] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2023-11-06 21:02:23.442 MST [15174] LOG:  database system was shut down at 2023-11-06 21:02:18 MST
+2023-11-06 21:02:23.451 MST [15171] LOG:  database system is ready to accept connections
+2023-11-06 21:05:08.741 MST [15349] FATAL:  database "teiko_db" does not exist
+2023-11-06 21:07:23.445 MST [15172] LOG:  checkpoint starting: time
+2023-11-06 21:07:28.121 MST [15172] LOG:  checkpoint complete: wrote 49 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.664 s, sync=0.008 s, total=4.676 s; sync files=15, longest=0.002 s, average=0.001 s; distance=267 kB, estimate=267 kB; lsn=0/14DB938, redo lsn=0/14DB900
+2023-11-06 21:07:53.577 MST [15411] ERROR:  permission denied to create database
+2023-11-06 21:07:53.577 MST [15411] STATEMENT:  CREATE DATABASE teiko_db;
+2023-11-06 21:12:23.114 MST [15172] LOG:  checkpoint starting: time
+2023-11-06 21:13:54.829 MST [15172] LOG:  checkpoint complete: wrote 908 buffers (5.5%); 0 WAL file(s) added, 0 removed, 0 recycled; write=91.694 s, sync=0.018 s, total=91.716 s; sync files=300, longest=0.003 s, average=0.001 s; distance=4096 kB, estimate=4096 kB; lsn=0/18DBB98, redo lsn=0/18DBB60
+2023-11-06 21:19:33.257 MST [15705] ERROR:  permission denied for database teiko_db
+2023-11-06 21:19:33.257 MST [15705] STATEMENT:  -- We create a schema named 'research_data'
+	CREATE SCHEMA research_data
+2023-11-06 21:27:52.431 MST [15172] LOG:  checkpoint starting: time
+2023-11-06 22:00:00.191 MST [15172] LOG:  checkpoint complete: wrote 76 buffers (0.5%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1927.581 s, sync=0.173 s, total=1927.761 s; sync files=63, longest=0.170 s, average=0.003 s; distance=277 kB, estimate=3714 kB; lsn=0/1921160, redo lsn=0/1921128
+2023-11-06 22:10:10.268 MST [15171] LOG:  received smart shutdown request
+2023-11-06 22:10:10.271 MST [15171] LOG:  background worker "logical replication launcher" (PID 15177) exited with exit code 1
+2023-11-06 22:10:10.271 MST [15172] LOG:  shutting down
+2023-11-06 22:10:10.272 MST [15172] LOG:  checkpoint starting: shutdown immediate
+2023-11-06 22:10:10.276 MST [15172] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.005 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=3343 kB; lsn=0/1921210, redo lsn=0/1921210
+2023-11-06 22:10:10.281 MST [15171] LOG:  database system is shut down
+2023-11-07 08:27:55.500 MST [1144] LOG:  starting PostgreSQL 16.0 on x86_64-apple-darwin13.4.0, compiled by clang version 15.0.7, 64-bit
+2023-11-07 08:27:55.506 MST [1144] LOG:  listening on IPv6 address "::1", port 5432
+2023-11-07 08:27:55.506 MST [1144] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2023-11-07 08:27:55.507 MST [1144] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2023-11-07 08:27:55.516 MST [1147] LOG:  database system was shut down at 2023-11-06 22:10:10 MST
+2023-11-07 08:27:55.530 MST [1144] LOG:  database system is ready to accept connections
+2023-11-07 08:29:24.869 MST [1231] ERROR:  permission denied for database teiko_db
+2023-11-07 08:29:24.869 MST [1231] STATEMENT:  -- We create a schema named 'research_data'
+	CREATE SCHEMA research_data
+2023-11-07 08:32:55.518 MST [1145] LOG:  checkpoint starting: time
+2023-11-07 08:33:01.216 MST [1145] LOG:  checkpoint complete: wrote 59 buffers (0.4%); 0 WAL file(s) added, 0 removed, 0 recycled; write=5.671 s, sync=0.020 s, total=5.698 s; sync files=57, longest=0.002 s, average=0.001 s; distance=250 kB, estimate=250 kB; lsn=0/195FE08, redo lsn=0/195FDD0
+2023-11-07 08:48:17.344 MST [1677] ERROR:  schema "research-data" does not exist at character 15
+2023-11-07 08:48:17.344 MST [1677] STATEMENT:  
+	CREATE TABLE "research-data".projects (
+		project_name TEXT
+	)
+	
+	
+2023-11-07 08:48:59.130 MST [1677] ERROR:  schema "research_data" does not exist at character 15
+2023-11-07 08:48:59.130 MST [1677] STATEMENT:  
+	CREATE TABLE research_data.projects (
+		project_name TEXT
+	)
+	
+	
+2023-11-07 08:52:55.224 MST [1145] LOG:  checkpoint starting: time
+2023-11-07 08:53:01.012 MST [1145] LOG:  checkpoint complete: wrote 58 buffers (0.4%); 0 WAL file(s) added, 0 removed, 0 recycled; write=5.767 s, sync=0.016 s, total=5.789 s; sync files=56, longest=0.002 s, average=0.001 s; distance=254 kB, estimate=254 kB; lsn=0/199F920, redo lsn=0/199F8E8
+2023-11-07 08:58:30.771 MST [1145] LOG:  checkpoint starting: time
+2023-11-07 08:58:37.186 MST [1145] LOG:  checkpoint complete: wrote 64 buffers (0.4%); 0 WAL file(s) added, 0 removed, 0 recycled; write=6.391 s, sync=0.019 s, total=6.415 s; sync files=57, longest=0.002 s, average=0.001 s; distance=251 kB, estimate=254 kB; lsn=0/19DE558, redo lsn=0/19DE520
+2023-11-07 09:03:30.189 MST [1145] LOG:  checkpoint starting: time
+2023-11-07 09:03:31.724 MST [1145] LOG:  checkpoint complete: wrote 16 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.516 s, sync=0.014 s, total=1.535 s; sync files=11, longest=0.011 s, average=0.002 s; distance=1 kB, estimate=229 kB; lsn=0/19DEA40, redo lsn=0/19DEA08
+2023-11-07 09:07:50.876 MST [2065] ERROR:  cannot drop table research_data.treatments because other objects depend on it
+2023-11-07 09:07:50.876 MST [2065] DETAIL:  constraint samples_treatment_id_fkey on table research_data.samples depends on table research_data.treatments
+2023-11-07 09:07:50.876 MST [2065] HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2023-11-07 09:07:50.876 MST [2065] STATEMENT:  
+	DROP TABLE research_data.treatments
+2023-11-07 09:08:30.726 MST [1145] LOG:  checkpoint starting: time
+2023-11-07 09:08:32.157 MST [1145] LOG:  checkpoint complete: wrote 15 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.421 s, sync=0.007 s, total=1.431 s; sync files=11, longest=0.002 s, average=0.001 s; distance=1 kB, estimate=206 kB; lsn=0/19DF048, redo lsn=0/19DF010
+2023-11-07 09:26:59.726 MST [2065] ERROR:  invalid input syntax for type integer: "sbj1" at character 93
+2023-11-07 09:26:59.726 MST [2065] STATEMENT:  INSERT INTO research_data.subjects (project_id, subject_id, condition, age, sex) VALUES (1, 'sbj1', 'melanoma', 70, 'F'), (1, 'sbj2', 'healthy', 65, 'F'), (1, 'sbj3', 'melanoma', 75, 'M'), (1, 'sbj4', 'lung', 50, 'F'), (1, 'sbj5', 'healthy', 77, 'M'), (2, 'sbj6', 'healthy', 45, 'M'), (2, 'sbj7', 'healthy', 80, 'F'), (2, 'sbj8', 'melanoma', 30, 'F'), (2, 'sbj9', 'melanoma', 72, 'M'), (2, 'sbj10', 'lung', 63, 'M'), (2, 'sbj11', 'lung', 55, 'F'), (3, 'sbj12', 'melanoma', 50, 'F'), (3, 'sbj13', 'melanoma', 50, 'M')
+2023-11-07 09:28:10.308 MST [2579] ERROR:  schema "research_data" already exists
+2023-11-07 09:28:10.308 MST [2579] STATEMENT:  -- We create a schema named 'research_data'
+	CREATE SCHEMA research_data
+2023-11-07 09:28:10.308 MST [2579] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2023-11-07 09:28:10.308 MST [2579] STATEMENT:  
+	
+	-- Creating table for Projects
+	CREATE TABLE research_data.projects (
+	    project_id SERIAL PRIMARY KEY,
+	    project_name VARCHAR(50) UNIQUE NOT NULL
+	)
+2023-11-07 09:28:10.309 MST [2579] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2023-11-07 09:28:10.309 MST [2579] STATEMENT:  
+	
+	-- Creating table for Subjects
+	CREATE TABLE research_data.subjects (
+	    subject_id SERIAL PRIMARY KEY,
+	    subject_name VARCHAR(50) UNIQUE NOT NULL,
+	    project_id INT REFERENCES research_data.projects(project_id) ON DELETE CASCADE,
+	    age INT,
+	    sex CHAR(1),
+	    condition VARCHAR(50),
+	    UNIQUE(subject_id, project_id)
+	)
+2023-11-07 09:28:10.310 MST [2579] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2023-11-07 09:28:10.310 MST [2579] STATEMENT:  
+	
+	-- Creating table for Treatments
+	CREATE TABLE research_data.treatments (
+	    treatment_id SERIAL PRIMARY KEY,
+	    treatment_name VARCHAR(50) UNIQUE NOT NULL
+	)
+2023-11-07 09:28:10.311 MST [2579] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2023-11-07 09:28:10.311 MST [2579] STATEMENT:  
+	
+	-- Creating table for Samples
+	CREATE TABLE research_data.samples (
+	    sample_id SERIAL PRIMARY KEY,
+	    subject_id INT REFERENCES research_data.subjects(subject_id) ON DELETE CASCADE,
+	    treatment_id INT REFERENCES research_data.treatments(treatment_id) ON DELETE SET NULL,
+	    response CHAR(1),
+	    sample_name VARCHAR(50),
+	    sample_type VARCHAR(50),
+	    time_from_treatment_start INT
+	)
+2023-11-07 09:28:10.312 MST [2579] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2023-11-07 09:28:10.312 MST [2579] STATEMENT:  
+	
+	-- Creating table for CellCounts
+	CREATE TABLE research_data.cell_counts (
+	    cell_count_id SERIAL PRIMARY KEY,
+	    sample_id INT REFERENCES research_data.samples(sample_id) ON DELETE CASCADE,
+	    b_cell INT,
+	    cd8_t_cell INT,
+	    cd4_t_cell INT,
+	    nk_cell INT,
+	    monocyte INT
+	)
+2023-11-07 09:29:03.617 MST [2065] ERROR:  invalid input syntax for type integer: "sbj1" at character 93
+2023-11-07 09:29:03.617 MST [2065] STATEMENT:  INSERT INTO research_data.subjects (project_id, subject_id, condition, age, sex) VALUES (1, 'sbj1', 'melanoma', 70, 'F'), (1, 'sbj2', 'healthy', 65, 'F'), (1, 'sbj3', 'melanoma', 75, 'M'), (1, 'sbj4', 'lung', 50, 'F'), (1, 'sbj5', 'healthy', 77, 'M'), (2, 'sbj6', 'healthy', 45, 'M'), (2, 'sbj7', 'healthy', 80, 'F'), (2, 'sbj8', 'melanoma', 30, 'F'), (2, 'sbj9', 'melanoma', 72, 'M'), (2, 'sbj10', 'lung', 63, 'M'), (2, 'sbj11', 'lung', 55, 'F'), (3, 'sbj12', 'melanoma', 50, 'F'), (3, 'sbj13', 'melanoma', 50, 'M')
+2023-11-07 09:29:24.976 MST [2065] ERROR:  column "subject_name" of relation "subjects" does not exist at character 49
+2023-11-07 09:29:24.976 MST [2065] STATEMENT:  INSERT INTO research_data.subjects (project_id, subject_name, condition, age, sex) VALUES (1, 'sbj1', 'melanoma', 70, 'F'), (1, 'sbj2', 'healthy', 65, 'F'), (1, 'sbj3', 'melanoma', 75, 'M'), (1, 'sbj4', 'lung', 50, 'F'), (1, 'sbj5', 'healthy', 77, 'M'), (2, 'sbj6', 'healthy', 45, 'M'), (2, 'sbj7', 'healthy', 80, 'F'), (2, 'sbj8', 'melanoma', 30, 'F'), (2, 'sbj9', 'melanoma', 72, 'M'), (2, 'sbj10', 'lung', 63, 'M'), (2, 'sbj11', 'lung', 55, 'F'), (3, 'sbj12', 'melanoma', 50, 'F'), (3, 'sbj13', 'melanoma', 50, 'M')
