@@ -9,6 +9,10 @@ To run the code i used `make run` which will run the code in [`main.py`](./main.
 
 For both problems I performed a proof of concept in the notebooks and then moved the code into the [`teiko_tools/analysis.py`](./teiko_tools/analysis.py) file. I did this to ensure that the code was reproducible and could be run from the command line.
 
+Tests were added for the python portion of the assessment. Unfortunately i did not have time to add CI/CD to this project. The tests can be run using `make test` and the results are shown below.
+
+![Python Tests](./passing_tests.png)
+
 
 ## Challenge Questions
 1. Please write a python program to convert cell count in cell-count.csv to relative frequency (in percentage) of total cell count for each sample. Total cell count of each sample is the sum of cells in the five populations of that sample. Please return an output file in csv format with cell count and relative frequency of each population of each sample per line. The output file should have the following columns:
