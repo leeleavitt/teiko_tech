@@ -46,6 +46,20 @@ venv:
 
 # Target to run the app
 .PHONY: run
-run: #install-mambaforge create-dev-venv venv
+run: install-mambaforge create-dev-venv venv
 	@echo "running app"
 	.venv/bin/python main.py
+
+# Target to run tests
+.PHONY: test
+test:  
+	@echo "running tests"
+	.venv/bin/pytest
+
+# Target to run linting
+.PHONY: lint
+lint:
+	@echo "running linting"
+	.venv/bin/black teiko_tools/
+
+
