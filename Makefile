@@ -16,14 +16,12 @@ endif
 # Target to install mambaforge
 .PHONY: install-mambaforge
 install-mambaforge:
-	@echo "Checking if mamba is installed..."
-	@command -v mamba > /dev/null 2>&1 || (echo "Mamba is not installed. Installing Mambaforge..."; \
 	curl -o Mambaforge.sh -L $(MAMBA_URL) && \
 	bash Mambaforge.sh -b -p "${PWD}/conda" && \
 	bash "${PWD}/conda/etc/profile.d/conda.sh" && \
 	bash $(PWD)/conda/bin/conda init && \
 	rm Mambaforge.sh; \
-	echo "Mambaforge installation complete.")
+	echo "Mambaforge installation complete."
 
 # Target to create dev env with poetry and python 3.10
 .PHONY: create-dev-env
