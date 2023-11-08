@@ -19,6 +19,7 @@ postgresql = "*"
 # Python specific deps
 [tool.poetry.dependencies]
 python = "^3.10"
+pip = "*"
 
 # General dependencies
 pandas = "*"

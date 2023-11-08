@@ -42,8 +42,10 @@ lock:
 venv:
 	@echo "installing venv from lock file"
 	.dev-venv/bin/conda-lock install -p .venv conda-lock.yml
+	.venv/bin/pip install -e .
 
+# Target to run the app
 .PHONY: run
-run: install-mambaforge create-dev-venv venv
+run: #install-mambaforge create-dev-venv venv
 	@echo "running app"
-	.venv/bin/python 
+	.venv/bin/python main.py

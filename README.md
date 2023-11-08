@@ -5,7 +5,9 @@ For this project i decided to use conda to manage the dependencies. I like to us
 
 To create the environment i used the command `make venv` which will create a conda environment called within this repo `.venv/` and installs the dependencies in `conda-lock.yml`. To activate the environment i used `conda activate .venv/`.
 
+To run the code i used `make run` which will run the code in [`main.py`](./main.py). This script will run the code in [`problem1.ipynb`](./problem1.ipynb) and [`problem2.ipynb`](./problem2.ipynb). The code in these notebooks is also available in [`teiko_tools/analysis.py`](./teiko_tools/analysis.py). 
 
+For both problems I performed a proof of concept in the notebooks and then moved the code into the [`teiko_tools/analysis.py`](./teiko_tools/analysis.py) file. I did this to ensure that the code was reproducible and could be run from the command line.
 
 
 

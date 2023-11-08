@@ -15,8 +15,8 @@
 version: 1
 metadata:
   content_hash:
-    osx-64: fb676fb7ed7ba303214c2d030e02af9478846e3d1c854497c22328d12b3471d4
-    linux-64: 4e9efcc6cc2b1fcad882d297dc2a98db8994de2129d85165f9586f9ee800e1ad
+    osx-64: 733e8a3f64cea6d264280055ea17b94482324083e78edf204eab6a6b8afe26bf
+    linux-64: 3ae619a0e4e8f632eeeb4fe4452045a370cc4427f64dd9bd0a28d23726d6ca33
   channels:
   - url: conda-forge
     used_env_vars: []
@@ -1202,6 +1202,18 @@ package:
     sha256: 38d16b5c53ec1af845d37d22e7bb0e6c934c7f19499123507c5a470f6f8b7dde
   category: main
   optional: false
+- name: wheel
+  version: 0.41.3
+  manager: conda
+  platform: linux-64
+  dependencies:
+    python: '>=3.7'
+  url: https://conda.anaconda.org/conda-forge/noarch/wheel-0.41.3-pyhd8ed1ab_0.conda
+  hash:
+    md5: 3fc026b9c87d091c4b34a6c997324ae8
+    sha256: 84c3b57fba778add2bd47b7cc70e86f746d2c55549ffd2ccb6f3d6bf7c94d21d
+  category: main
+  optional: false
 - name: zipp
   version: 3.17.0
   manager: conda
@@ -1382,6 +1394,20 @@ package:
     sha256: b8ca07308602b12c533f09e00d1ecb75288367d1f1506e34d0f12dd7abb01726
   category: main
   optional: false
+- name: pip
+  version: 23.3.1
+  manager: conda
+  platform: linux-64
+  dependencies:
+    python: '>=3.7'
+    setuptools: ''
+    wheel: ''
+  url: https://conda.anaconda.org/conda-forge/noarch/pip-23.3.1-pyhd8ed1ab_0.conda
+  hash:
+    md5: 2400c0b86889f43aa52067161e1fb108
+    sha256: 435829a03e1c6009f013f29bb83de8b876c388820bf8cf69a7baeec25f6a3563
+  category: main
+  optional: false
 - name: postgresql
   version: '16.0'
   manager: conda
@@ -1401,6 +1427,21 @@ package:
   hash:
     md5: 6ce1ab5480d3aa4308654971ac5f731b
     sha256: d9e391b4e4e050303d43a43adbd7175547404374a1d6937bdf58c277cf48bd5f
+  category: main
+  optional: false
+- name: psycopg2
+  version: 2.9.7
+  manager: conda
+  platform: linux-64
+  dependencies:
+    libgcc-ng: '>=12'
+    libpq: '>=16.0,<17.0a0'
+    python: '>=3.12,<3.13.0a0'
+    python_abi: 3.12.*
+  url: https://conda.anaconda.org/conda-forge/linux-64/psycopg2-2.9.7-py312h08590aa_1.conda
+  hash:
+    md5: 48e155993ac8d9908506d8bf7ed8be2e
+    sha256: 5f3184c7676b132db3bd881bd6724a788ef46a89ef6bc5a733a79ed6c05ba10f
   category: main
   optional: false
 - name: pytest
@@ -2849,6 +2890,18 @@ package:
     sha256: 38d16b5c53ec1af845d37d22e7bb0e6c934c7f19499123507c5a470f6f8b7dde
   category: main
   optional: false
+- name: wheel
+  version: 0.41.3
+  manager: conda
+  platform: osx-64
+  dependencies:
+    python: '>=3.7'
+  url: https://conda.anaconda.org/conda-forge/noarch/wheel-0.41.3-pyhd8ed1ab_0.conda
+  hash:
+    md5: 3fc026b9c87d091c4b34a6c997324ae8
+    sha256: 84c3b57fba778add2bd47b7cc70e86f746d2c55549ffd2ccb6f3d6bf7c94d21d
+  category: main
+  optional: false
 - name: zipp
   version: 3.17.0
   manager: conda
@@ -3005,6 +3058,20 @@ package:
     sha256: 07706c0417ead94f359ca7278f65452d3c396448777aba1da6a11fc351bdca9a
   category: dev
   optional: true
+- name: pip
+  version: 23.3.1
+  manager: conda
+  platform: osx-64
+  dependencies:
+    python: '>=3.7'
+    setuptools: ''
+    wheel: ''
+  url: https://conda.anaconda.org/conda-forge/noarch/pip-23.3.1-pyhd8ed1ab_0.conda
+  hash:
+    md5: 2400c0b86889f43aa52067161e1fb108
+    sha256: 435829a03e1c6009f013f29bb83de8b876c388820bf8cf69a7baeec25f6a3563
+  category: main
+  optional: false
 - name: postgresql
   version: '16.0'
   manager: conda
@@ -3023,6 +3090,21 @@ package:
   hash:
     md5: d54fd3d9e90e441cc7b2f098ef002cd5
     sha256: aa33f64d068a5d4dd996de261cd9604b4bcdaba1ca3b8ce0d0fa037c94e47c76
+  category: main
+  optional: false
+- name: psycopg2
+  version: 2.9.7
+  manager: conda
+  platform: osx-64
+  dependencies:
+    libpq: '>=16.0,<17.0a0'
+    openssl: '>=3.1.3,<4.0a0'
+    python: '>=3.12,<3.13.0a0'
+    python_abi: 3.12.*
+  url: https://conda.anaconda.org/conda-forge/osx-64/psycopg2-2.9.7-py312hca9e88b_1.conda
+  hash:
+    md5: 42adc6a2460cba405687cee8408ddeaf
+    sha256: 57cd3f83464220b4f0094606815f47023431fcb0ea4f0dd56a336a06ed7ad51b
   category: main
   optional: false
 - name: pytest
