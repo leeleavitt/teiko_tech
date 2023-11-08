@@ -10,13 +10,13 @@ CREATE TABLE research_data.projects (
 -- Creating table for Subjects
 CREATE TABLE research_data.subjects (
     subject_id SERIAL PRIMARY KEY,
-    subject_name VARCHAR(50) UNIQUE NOT NULL,
     project_id INT REFERENCES research_data.projects(project_id) ON DELETE CASCADE,
+    subject_name VARCHAR(50) UNIQUE NOT NULL,
     age INT,
     sex CHAR(1),
-    condition VARCHAR(50),
-    UNIQUE(subject_id, project_id)
+    condition VARCHAR(50)
 );
+
 
 -- Creating table for Treatments
 CREATE TABLE research_data.treatments (
