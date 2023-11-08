@@ -1,4 +1,32 @@
 This is a project to accomplish the teiko.bio technical screen.
+# Python
+
+For this project i decided to use conda to manage the dependencies. I like to use conda since this env manager extends beyond python and can be used to manage R and other languages. I additonally used `conda-lock` to create a lock file for the dependencies. This is a great tool to ensure that the dependencies are reproducible across platforms.
+
+To create the environment i used the command `make venv` which will create a conda environment called within this repo `.venv/` and installs the dependencies in `conda-lock.yml`. To activate the environment i used `conda activate .venv/`.
+
+
+
+
+
+1. Please write a python program to convert cell count in cell-count.csv to relative frequency (in percentage) of total cell count for each sample. Total cell count of each sample is the sum of cells in the five populations of that sample. Please return an output file in csv format with cell count and relative frequency of each population of each sample per line. The output file should have the following columns:
+
+sample: the sample id as in column sample in cell-count.csv
+total_count: total cell count of sample
+population: name of the immune cell population (e.g. b_cell, cd8_t_cell, etc.)
+count: cell count
+percentage: relative frequency in percentage
+
+> The program is [`cell_counts_calculator`](./teiko_tools/analysis.py#L11) and the file produced is [`cell-counts-relative.csv`](./cell-counts-relative.csv). A proof of concept for this tool is here [`problem1.ipynb`](./problem1.ipynb).
+
+2. Among patients who have treatment tr1, we are interested in comparing the differences in cell population relative frequencies of melanoma patients who respond (responders) to tr1 versus those who do not (non-responders), with the overarching aim of predicting response to treatment tr1. Response information can be found in column response, with value y for responding and value n for non-responding. Please only include PBMC (blood) samples. 
+    * For each immune cell population, please generate a boxplot of the population relative frequencies comparing responders versus non-responders.
+    * Which cell populations show a difference between responders and non-responders? Please include statistics to support your conclusion.
+
+> I decided to combine both requirements into the boxplot figure. In the boxplot the x-tick labels were bolded if a T-test between the two groups was significant. The figure is [`treatment_comparison.png`](./treatment_comparison.png) and the code is [`problem2.ipynb`](./problem2.ipynb).
+> This code is located in [`CellCountsBoxPlot`](./teiko_tools/analysis.py#L49) where a class was used to hold both the plotting and the statistical test.  The plotting is done using `seaborn` and `matplotlib`. 
+
+![Boxplot showing treatment differences across cell types.](./treatment_comparison.png)
 
 
 # Database
