@@ -42,3 +42,6 @@ lock:
 venv:
 	@echo "installing venv from lock file"
 	.dev-venv/bin/conda-lock install -p .venv conda-lock.yml
+
+# Target to create the database
+.PHONY: create-db

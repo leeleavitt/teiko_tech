@@ -19,17 +19,29 @@ postgresql = "*"
 # Python specific deps
 [tool.poetry.dependencies]
 python = "^3.10"
+
+# General dependencies
 pandas = "*"
 numpy = "*"
+
+# Visualization specific dependencies
 matplotlib = "*"
 seaborn = "*"
+
+# Machine learning specific dependencies
 scipy = "*"
 scikit-learn = "*"
+
+# Database specific dependencies
+sqlalchemy = "*"
+psycopg2 = "*"
 
 # Development dependencies can be specified as follows
 [tool.poetry.dev-dependencies]
 pytest = "*"
 black = "*"
+ipython= "*"
+ipykernel = "*"
 
 # Configuration of the build system
 [build-system]
