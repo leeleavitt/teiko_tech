@@ -1,3 +1,4 @@
 .dev-venv/
 .venv/
 teiko_db/
+conda/

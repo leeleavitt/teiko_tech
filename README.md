@@ -1,4 +1,34 @@
 This is a project to accomplish the teiko.bio technical screen.
+# Python
+
+For this project i decided to use conda to manage the dependencies. I like to use conda since this env manager extends beyond python and can be used to manage R and other languages. I additonally used `conda-lock` to create a lock file for the dependencies. This is a great tool to ensure that the dependencies are reproducible across platforms.
+
+To create the environment i used the command `make venv` which will create a conda environment called within this repo `.venv/` and installs the dependencies in `conda-lock.yml`. To activate the environment i used `conda activate .venv/`.
+
+To run the code i used `make run` which will run the code in [`main.py`](./main.py). This script will run the code in [`problem1.ipynb`](./problem1.ipynb) and [`problem2.ipynb`](./problem2.ipynb). The code in these notebooks is also available in [`teiko_tools/analysis.py`](./teiko_tools/analysis.py). 
+
+For both problems I performed a proof of concept in the notebooks and then moved the code into the [`teiko_tools/analysis.py`](./teiko_tools/analysis.py) file. I did this to ensure that the code was reproducible and could be run from the command line.
+
+
+## Challenge Questions
+1. Please write a python program to convert cell count in cell-count.csv to relative frequency (in percentage) of total cell count for each sample. Total cell count of each sample is the sum of cells in the five populations of that sample. Please return an output file in csv format with cell count and relative frequency of each population of each sample per line. The output file should have the following columns:
+
+    sample: the sample id as in column sample in cell-count.csv
+    total_count: total cell count of sample
+    population: name of the immune cell population (e.g. b_cell, cd8_t_cell, etc.)
+    count: cell count
+    percentage: relative frequency in percentage
+
+> The program is [`cell_counts_calculator`](./teiko_tools/analysis.py#L11) and the file produced is [`cell-counts-relative.csv`](./cell-counts-relative.csv). A proof of concept for this tool is here [`problem1.ipynb`](./problem1.ipynb).
+
+2. Among patients who have treatment tr1, we are interested in comparing the differences in cell population relative frequencies of melanoma patients who respond (responders) to tr1 versus those who do not (non-responders), with the overarching aim of predicting response to treatment tr1. Response information can be found in column response, with value y for responding and value n for non-responding. Please only include PBMC (blood) samples. 
+    * For each immune cell population, please generate a boxplot of the population relative frequencies comparing responders versus non-responders.
+    * Which cell populations show a difference between responders and non-responders? Please include statistics to support your conclusion.
+
+> I decided to combine both requirements into the boxplot figure. In the boxplot the x-tick labels were bolded if a T-test between the two groups was significant. The figure is [`treatment_comparison.png`](./treatment_comparison.png) and the proof of concept code is [`problem2.ipynb`](./problem2.ipynb).
+> This code is located in [`CellCountsBoxPlot`](./teiko_tools/analysis.py#L61) where a class was used to hold both the plotting and the statistical test.  The plotting is done using `seaborn` and `matplotlib`. 
+
+![Boxplot showing treatment differences across cell types.](./treatment_comparison.png)
 
 
 # Database
@@ -9,11 +39,11 @@ This is a project to accomplish the teiko.bio technical screen.
 
 2. What would be some advantages in capturing these information in a database?
 
-> A database creates an incredible envrionment for development. One fo the main advantages is the database can server and add data ansychronously, allowing many people to work with the same data. Also acquiring the data is increibly fast and specific. Instad of relying on csv's queries can be constructed to specifically collect and return only the data needed.
+> A database creates an incredible envrionment for development. One of the main advantages is the database server is available for multiple users to add and recieve data ansychronously.Also acquiring the data is increibly fast and specific. Instad of relying on csv's and subsetting or combinding those csv, queries can be constructed to specifically collect and return only the data needed.
 
 3. Based on the schema you provide in (1), please write a query to summarize the number of subjects available for each condition.
 
-> I took this as an opprotunity to learn postgresql. In all my experience i've not had an opprotunity to create and learn postgresql. I used conda to install postgresql using `make venv` from there i captured the commands in `main.sh` to stand up a database called `teiko_db`. From there I instantiated the tables in [`schema.sql`](./schema.sql) using a python function [`schema_standup`](teiko_tools/db_tools.py#L10). From there i loaded the data into the database using `pandas` with the function [`db_loader`](teiko_tools/db_tools.py#L49).
+> I took this as an opprotunity to learn postgresql. In all my experience i've not had an opprotunity to create and learn postgresql. I used conda to install postgresql using `make venv` from there i captured the commands in `main.sh` to stand up a database called `teiko_db`. From there I instantiated the tables in [`schema.sql`](./schema.sql) using a python function [`schema_standup`](teiko_tools/db_tools.py#L10). From there I loaded the data into the database using `pandas` with the function [`db_loader`](teiko_tools/db_tools.py#L49).
 
 I was then able to execute the qeury to obain the result,
 ```

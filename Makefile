@@ -19,9 +19,9 @@ install-mambaforge:
 	@echo "Checking if mamba is installed..."
 	@command -v mamba > /dev/null 2>&1 || (echo "Mamba is not installed. Installing Mambaforge..."; \
 	curl -o Mambaforge.sh -L $(MAMBA_URL) && \
-	bash Mambaforge.sh -b -p "${HOME}/conda" && \
-	bash "${HOME}/conda/etc/profile.d/conda.sh" && \
-	bash $(HOME)/conda/bin/conda init && \
+	bash Mambaforge.sh -b -p "${PWD}/conda" && \
+	bash "${PWD}/conda/etc/profile.d/conda.sh" && \
+	bash $(PWD)/conda/bin/conda init && \
 	rm Mambaforge.sh; \
 	echo "Mambaforge installation complete.")
 
@@ -29,7 +29,7 @@ install-mambaforge:
 .PHONY: create-dev-env
 create-dev-venv:
 	@echo "creating dev env at .dev-venv"
-	$(HOME)/conda/bin/mamba create -c conda-forge -p .dev-venv -y python=3.10 conda-lock
+	$(PWD)/conda/bin/mamba create -c conda-forge -p .dev-venv -y python=3.10 conda-lock
 
 # Target to lock dependencies using conda-lock
 .PHONY: lock
@@ -42,6 +42,24 @@ lock:
 venv:
 	@echo "installing venv from lock file"
 	.dev-venv/bin/conda-lock install -p .venv conda-lock.yml
+	.venv/bin/pip install -e .
 
-# Target to create the database
-.PHONY: create-db
+# Target to run the app
+.PHONY: run
+run: install-mambaforge create-dev-venv venv
+	@echo "running app"
+	.venv/bin/python main.py
+
+# Target to run tests
+.PHONY: test
+test:  
+	@echo "running tests"
+	.venv/bin/pytest
+
+# Target to run linting
+.PHONY: lint
+lint:
+	@echo "running linting"
+	.venv/bin/black teiko_tools/
+
+
