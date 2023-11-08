@@ -162,6 +162,9 @@ class CellCountsBoxPlot:
             "Cell counts for each cell type comparing response\nBolded x labels are significant (p < 0.05)"
         )
 
+        # increase the size of the bottom margin to fit labels
+        plt.subplots_adjust(bottom=0.2)
+
         if self.file_name_out:
             plt.savefig(self.file_name_out, dpi=300)
         else:
