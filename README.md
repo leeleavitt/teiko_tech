@@ -29,10 +29,10 @@ Tests were added for the python portion of the assessment. Unfortunately i did n
     * For each immune cell population, please generate a boxplot of the population relative frequencies comparing responders versus non-responders.
     * Which cell populations show a difference between responders and non-responders? Please include statistics to support your conclusion.
 
-> I decided to combine both requirements into the boxplot figure. In the boxplot the x-tick labels were bolded if a T-test between the two groups was significant. The figure is [`treatment_comparison.png`](./treatment_comparison.png) and the proof of concept code is [`problem2.ipynb`](./problem2.ipynb).
+> I decided to combine both requirements into the boxplot figure. In the boxplot the x-tick labels were bolded if a T-test between the two groups was significant. The figure is [`cell-counts-relative_boxplot.png`](./cell-counts-relative_boxplot.png) and the proof of concept code is [`problem2.ipynb`](./problem2.ipynb).
 > This code is located in [`CellCountsBoxPlot`](./teiko_tools/analysis.py#L61) where a class was used to hold both the plotting and the statistical test.  The plotting is done using `seaborn` and `matplotlib`. 
 
-![Boxplot showing treatment differences across cell types.](./treatment_comparison.png)
+![Boxplot showing treatment differences across cell types.](./cell-counts-relative_boxplot.png)
 
 
 # Database
