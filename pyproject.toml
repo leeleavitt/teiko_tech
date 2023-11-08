@@ -1,0 +1,50 @@
+[tool.poetry]
+name = "teiko-tools"
+version = "0.1.0"
+description = "Toolset to anlayze and manipulate Teiko data"
+authors = ["Lee Leavitt <lee.leavitt.u@gmail.com>"]
+
+[tool.conda-lock]
+channels = [
+    'conda-forge', 'bioconda'
+]
+
+platforms = [
+    'osx-64', 'linux-64'
+]
+
+[tool.conda-lock.dependencies]
+postgresql = "*"
+
+# Python specific deps
+[tool.poetry.dependencies]
+python = "^3.10"
+pip = "*"
+
+# General dependencies
+pandas = "*"
+numpy = "*"
+
+# Visualization specific dependencies
+matplotlib = "*"
+seaborn = "*"
+
+# Machine learning specific dependencies
+scipy = "*"
+scikit-learn = "*"
+
+# Database specific dependencies
+sqlalchemy = "*"
+psycopg2 = "*"
+
+# Development dependencies can be specified as follows
+[tool.poetry.dev-dependencies]
+pytest = "*"
+black = "*"
+ipython= "*"
+ipykernel = "*"
+
+# Configuration of the build system
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
